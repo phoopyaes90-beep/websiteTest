@@ -1,23 +1,3 @@
-// let products = [];
-
-// async function fetchProducts() {
-//   try {
-//     const response = await fetch('https://dummyjson.com/products');
-//     const data = await response.json();
-//     products = data.products.map(item => ({
-//       id: item.id,
-//       name: item.title,
-//       price: item.price,
-//       qty: 0,
-//       image: item.thumbnail
-//     }));
-
-//     addProduct(); 
-//   } catch (error) {
-//     console.error('Error fetching products:', error);
-//   }
-// } // <--- ဒီအပိတ်ကွင်းလေး လျော့နေလို့ error တက်နေတာပါ
-
 async function fetchProducts() {
   try {
     // Skeleton ၄ ကွက်စာ အတန်းလိုက် ပေါ်နေစေရန်
@@ -97,14 +77,14 @@ function addProduct() {
         productCart.className = 'rounded flex flex-col justify-between items-start text-left bg-white w-full md:border-0 md:p-0 md:shadow-none';
         
         productCart.innerHTML = `
-          <span class="text-[11px] font-semibold uppercase tracking-wider mb-1 text-gray-600 w-full text-left">
+          <span class="text-[11px] uppercase tracking-wider mb-1 text-black-500 w-full text-left">
               ${product.name}
           </span>
           <div class="w-full h-36 my-1 flex items-center justify-center bg-transparent">
               <img src="${product.image}" alt="${product.name}" class="max-h-full max-w-full object-contain">
           </div>
           <div class="w-full flex justify-between items-center mt-1 text-xs">
-              <span class="font-bold">${product.price.toFixed(2)} USDC</span>
+              <span class="">${product.price.toFixed(2)} USDC</span>
               <div class="flex items-center border border-gray-300 rounded overflow-hidden">
                   <button onclick="updateQty('${product.id}', -1)" class="px-2.5 py-1 hover:bg-gray-100 border-r border-gray-300 cursor-pointer">-</button>
                   <span id="qty-${product.id}" class="px-3 py-1">${product.qty}</span>
@@ -181,12 +161,12 @@ function updateCartModal() {
             <img src="${item.image}" alt="${item.name}" class="max-h-full max-w-full object-contain">
         </div>
         <div>
-          <p class="font-bold text-gray-900">${item.name}</p>
+          <p class="text-gray-900">${item.name}</p>
           <p class="text-gray-500 mt-0.5">Qty: ${item.qty}</p>
         </div>
       </div>
       <div class="flex items-center gap-4 shrink-0">
-        <span class="font-bold text-gray-900">${itemTotal.toFixed(2)} USDC</span>
+        <span class="text-gray-900">${itemTotal.toFixed(2)} USDC</span>
         <button onclick="updateQty('${item.id}', -1)" class="border border-gray-300 px-2.5 py-1 rounded text-gray-600 bg-gray-50 hover:bg-gray-200 cursor-pointer">-</button>
       </div>
     `;

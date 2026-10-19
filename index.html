@@ -7,13 +7,14 @@
   <!-- Tailwind CSS CDN -->
   <link rel="stylesheet" href="./output.css">
   <!-- Google Font: Space Mono -->
+   <link rel="shortcut icon" href="./images/onchainkitshop.svg" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
   body {
     font-family: 'Space Mono', monospace, sans-serif;
   }
 
-  /* PC View */
+  /* PC View Layout Customization */
   @media (min-width: 768px) {
     html,
     body {
@@ -22,28 +23,30 @@
     }
 
     main {
-      height: calc(100vh - 130px);
-      min-height: 0;
+      height: calc(100vh - 110px);
+      display: flex;
+      align-items: center;
       overflow: hidden;
     }
 
     .shop-layout {
       height: 100%;
-      min-height: 0;
-      align-items: flex-start;
+      width: 100%;
+      align-items: stretch;
       overflow: hidden;
+      position: relative;
     }
 
     .shop-left {
-      justify-content: flex-start;
-      align-self: flex-start;
-      height: auto;
-      overflow: visible;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      padding-right: 60px !important;
     }
 
     .shop-right {
       height: 100%;
-      min-height: 0;
       overflow-y: auto;
       overflow-x: hidden;
     }
@@ -67,22 +70,18 @@
       height: auto !important;
       min-height: 0 !important;
       overflow: visible !important;
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
     }
 
     .shop-layout {
       height: auto !important;
-      min-height: 0 !important;
       align-items: stretch !important;
-      overflow: visible !important;
     }
 
     .shop-left,
     .shop-right {
       height: auto !important;
-      min-height: 0 !important;
       overflow: visible !important;
+      padding-right: 0 !important;
     }
   }
 </style>
@@ -106,7 +105,7 @@
           class="h-7 w-auto object-contain"
         />
 
-        <span class="bg-gray-100 px-4 py-0.5 text-xs rounded-sm text-gray-700">
+        <span class="bg-gray-100 px-3 py-0.5 text-xs rounded text-gray-700">
           Template
         </span>
       </div>
@@ -136,55 +135,53 @@
   </header>
 
   <!-- Main Container Layout -->
-  <main class="mx-auto flex max-w-5xl grow flex-col w-full relative px-4 md:px-6 my-auto h-auto md:h-[calc(100vh-130px)] overflow-visible md:overflow-hidden">
+  <main class="mx-auto max-w-5xl w-full px-4 md:px-6 h-full relative overflow-hidden">
       
-    <div class="shop-layout flex grow flex-col md:flex-row relative items-center py-4 gap-8 md:gap-0 h-full overflow-hidden">
+    <div class="shop-layout flex flex-col md:flex-row w-full gap-0 items-stretch h-full">
           
-          <div class="shop-left flex flex-col justify-center md:w-5/12 pr-0 md:pr-4 space-y-4 w-full flex-none pl-0 ml-0">
-    <div class="space-y-3 w-full pl-0 ml-0">
-        <h2 class="font-bold font-condensed text-3xl leading-tight pl-0 ml-0" style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: 700;">
-            The future of commerce is less fee. More creativity.
-        </h2>
-        <p class="text-xs md:text-[13px] text-gray-600 leading-relaxed pl-0 ml-0">
-            People and businesses lose tens of billions of dollars in transaction fees and countless hours in delays to the current system that they wouldn't with onchain payments.
-        </p>
-        <p class="text-xs md:text-[13px] text-gray-600 leading-relaxed pt-1 pl-0 ml-0">
-            We're updating the system so it's cheaper and faster.
-        </p>
-    </div>
+          <!-- Left Column -->
+          <div class="shop-left md:w-5/12 w-full flex-none flex flex-col justify-center h-full" style="padding-right: 40px;">
+            <div class="space-y-5 w-full h-full justify-center flex flex-col">
+                <div class="space-y-3 w-full">
+                    <h2 class="font-bold text-3xl leading-[1.15] text-black tracking-tight" style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif;">
+                        The future of commerce is less fee. More creativity.
+                    </h2>
+                    <p class="text-[12px] text-gray-600 leading-[1.6]">
+                        People and businesses lose tens of billions of dollars in transaction fees and countless hours in delays to the current system that they wouldn't with onchain payments.
+                    </p>
+                    <p class="text-[12px] text-gray-600 leading-[1.6]">
+                        We're updating the system so it's cheaper and faster.
+                    </p>
+                </div>
 
-    <!-- Extra Links -->
-    <div class="space-y-2 text-xs pt-1 mt-6 md:mt-10 pl-0 ml-0">
-        <p class="font-bold tracking-wider mb-1 pl-0 ml-0">BUILD YOUR ONCHAIN STORE</p>
-        <a href="https://github.com/coinbase/onchainkit" class="flex cursor-pointer items-center pl-0 ml-0" target="_blank" rel="noreferrer">
-            <p class="text-xs md:text-sm leading-relaxed">FORK THIS TEMPLATE</p>
-            <span class="pl-1">
-                <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><title>ExternalLinkSvg</title><rect x="0.5" y="0.5" width="19" height="19" rx="9.5" stroke="black"></rect><path d="M6 14L14 6M14 6H8M14 6V12" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </span>
-        </a>
-        <a href="https://onchainkit.xyz" class="flex cursor-pointer items-center pt-0 pl-0 ml-0" target="_blank" rel="noreferrer">
-            <p class="text-xs md:text-sm leading-relaxed">VIEW DOCS</p>
-            <span class="pl-1">
-                <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><title>ExternalLinkSvg</title><rect x="0.5" y="0.5" width="19" height="19" rx="9.5" stroke="black"></rect><path d="M6 14L14 6M14 6H8M14 6V12" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </span>
-        </a>
-    </div>
+                <!-- Extra Links -->
+                <div class="space-y-2 text-xs mt-10">
+                   <p class="font-bold tracking-wider mb-1" style="font-size: 16px;">BUILD YOUR ONCHAIN STORE</p>
+                    <a href="https://github.com/coinbase/onchainkit" class="flex cursor-pointer items-center gap-1.5 hover:opacity-75 transition" target="_blank" rel="noreferrer">
+                        <p class="text-xs leading-relaxed">FORK THIS TEMPLATE</p>
+                        <span>
+                            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="19" height="19" rx="9.5" stroke="black"></rect><path d="M6 14L14 6M14 6H8M14 6V12" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        </span>
+                    </a>
+                    <a href="https://onchainkit.xyz" class="flex cursor-pointer items-center gap-1.5 hover:opacity-75 transition" target="_blank" rel="noreferrer">
+                        <p class="text-xs leading-relaxed">VIEW DOCS</p>
+                        <span>
+                            <svg width="12" height="12" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="19" height="19" rx="9.5" stroke="black"></rect><path d="M6 14L14 6M14 6H8M14 6V12" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+          </div>
 
-    <!-- Absolute Vertical Border Line -->
-    <div class="hidden md:block absolute left-[41.6666%] top-0 bottom-0 w-[1px] bg-gray-200"></div>
-</div>
-          
+          <!-- Absolute ဒေါင်လိုက်မျဉ်း (Scroll ဆွဲသည့်အခါ မရွေ့ဘဲ ငြိမ်နေမည်) -->
+          <div class="hidden md:block absolute left-[41.6666%] top-0 bottom-0 h-full w-[1px] bg-gray-200 pointer-events-none z-10"></div>
+              
           <!-- Right Column -->
-         <div class="shop-right flex grow flex-col md:w-7/12 pl-0 md:pl-6 justify-start w-full h-full overflow-y-auto pr-2 pt-2">
+          <div class="shop-right md:w-7/12 pl-6 md:pl-10 w-full overflow-y-auto h-full">
               <!-- Product Grid (2x2) -->
-              <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 w-full">
-                <!-- <div id="loadingIndicator" class="col-span-full flex flex-col items-center justify-center py-12">
-          <div class="w-8 h-8 border-4 border-gray-300 border-t-black rounded-full animate-spin"></div>
-          <p class="text-xs text-gray-500 mt-3">Loading products, please wait...</p>
-      </div> -->
+              <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6 w-full py-6">
                   <!-- JavaScript ကနေ ဒီထဲကို Product တွေ ဝင်လာပါမယ် -->
               </div>
-
           </div>
 
       </div>
@@ -193,7 +190,7 @@
 
   <!-- Full-Width Bottom Footer Section with Border Top Line -->
   <footer class="w-full border-t border-gray-200 bg-white mt-auto flex-none">
-      <div class="mx-auto flex max-w-5xl flex-col md:flex-row justify-between items-start md:items-center gap-4 px-4 md:px-6 py-3">
+      <div class="mx-auto flex max-w-5xl flex-col md:flex-row justify-between items-center gap-4 px-4 md:px-6 py-3">
           <!-- Built with OnchainKit & Privacy Policy -->
           <div class="text-xs text-gray-500 space-y-0.5">
               <p>Built with OnchainKit</p>
@@ -201,11 +198,11 @@
           </div>
 
           <!-- Total & Checkout Button Section -->
-          <div class="flex flex-col sm:flex-row justify-between items-center gap-50 w-full md:w-auto">
-              <div id="total-price" class="text-base font-bold tracking-tight">
-                   <h2 class="font-bold text-lg ">TOTAL 0.00 USDC</h2>
+          <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 540px;" class="flex-col sm:flex-row">
+              <div id="total-price" class="text-base font-bold tracking-tight" style="margin-right: auto; padding-right: 20px;">
+                   <h2 class="font-bold text-lg">TOTAL 0.00 USDC</h2>
               </div>
-              <button class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm px-6 py-2.5 rounded-lg flex items-center justify-center gap-2 shadow-sm transition cursor-pointer" id="payCryptoBtn">
+              <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm px-6 py-2.5 rounded-lg flex items-center justify-center gap-2 shadow-sm transition cursor-pointer" id="payCryptoBtn">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                       <circle cx="12" cy="12" r="10" />
                   </svg>
@@ -215,32 +212,30 @@
       </div>
   </footer>
 
-  <div id="cartModal" class="fixed inset-0 bg-black/50 items-center justify-center z-50" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; justify-content: center; align-items: center; background-color: rgba(0,0,0,0.5);">
-    <div class=" bg-white w-full max-w-lg rounded-2xl shadow-2xl p-6 relative flex flex-col max-h-[80vh] mx-auto my-auto justify-between" style="background-color: white; padding: 24px; border-radius: 16px; width: 100%; max-width: 500px;">
+  <!-- Checkout Cart Modal Section (အလယ်တည့်တည့်မှာ တိတိကျကျ ပေါ်စေရန် ပြင်ဆင်ထားသည်) -->
+  <div id="cartModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 9999; align-items: center; justify-content: center; padding: 16px;">
+    <div style="background-color: #ffffff; width: 100%; max-width: 500px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); padding: 24px; position: relative; display: flex; flex-direction: column; max-height: 85vh; justify-content: space-between;">
         
-        <div class="flex p-4 sitems-center justify-between">
-        <h2 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200">Checkout Cart</h2>
-     <button id="modalXBtn" class="text-gray-400 hover:text-black w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition cursor-pointer text-base font-bold">
-              ✕
-          </button>
-          </div>
+        <div class="flex items-center justify-between pb-3 border-b border-gray-200">
+            <h2 class="text-lg font-bold">Checkout Cart</h2>
+            <button id="modalXBtn" class="text-gray-400 hover:text-black w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition cursor-pointer text-base font-bold">
+                ✕
+            </button>
+        </div>
        
-        <div id="cartItemsContainer" class="overflow-y-auto space-y-4 my-2 pr-1"></div>
+        <div id="cartItemsContainer" class="overflow-y-auto space-y-4 my-4 pr-1" style="max-height: 50vh;"></div>
 
-
-        <div class="mt-6 pt-4 border-t border-gray-200 flex flex-col gap-4">
+        <div class="pt-4 border-t border-gray-200 flex flex-col gap-4">
             <div class="text-center text-lg font-bold">
                 TOTAL <span id="totalPrice">0.00</span> USDC
             </div>
-            <button id="closeModalBtn" class="w-full bg-black text-white py-2.5 rounded-lg text-xs font-bold hover:bg-gray-800 cursor-pointer" style="background-color: black; color: white; padding: 10px; border-radius: 8px; cursor: pointer;">
+            <button id="closeModalBtn" class="w-full bg-black text-white py-2.5 rounded-lg text-xs font-bold hover:bg-gray-800 cursor-pointer">
                 Close
             </button>
         </div>
 
     </div>
 </div>
-
-
 
   <!-- JavaScript for Calculations -->
   <script src="/script.js"></script>
